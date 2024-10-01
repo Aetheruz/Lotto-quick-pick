@@ -1,15 +1,18 @@
 import random
 
-length_input = input("Enter how many numbers you need: ")
-length_input = int(length_input)
-min_number = 1
-max_number = input("Last digit that you can enter: ") 
-max_number = int(max_number)
-numbers = []
-
-while len(numbers) < length_input:
-    num = random.randint(min_number, max_number)
-    if num not in numbers:
-        numbers.append(num)
-
-print(numbers)
+# Ask user if they want to play lotto
+choice = input("Did you want to play lotto? (yes/no): ")
+if choice == "yes":
+    max_49 = input("Press 1 for 6/49 or 2 for Lotto Max: ")
+    if max_49 == "1":
+        print("You choose 6/49")
+        lotto_49 = random.sample(range(1, 50), 6)
+        print(lotto_49)
+    elif max_49 == "2":
+        print("You choose Lotto Max")
+        lotto_max = random.sample(range(1, 50), 7)
+        print(lotto_max)
+    else:
+        print("You choose wrong number")
+else: 
+    "You choose not to play lotto"
